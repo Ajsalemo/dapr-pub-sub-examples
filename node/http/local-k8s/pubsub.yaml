@@ -1,0 +1,33 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: eventhubs-pubsub
+spec:
+  type: pubsub.azure.eventhubs
+  version: v1
+  metadata:
+  - name: connectionString
+    value: "[YOUR-CONNECTION-STRING]"
+  - name: eventHubNamespace
+    value: "[YOUR-EVENTHUB-NAMESPACE]"
+  - name: enableEntityManagement
+    value: "false"
+  # The following four properties are needed only if enableEntityManagement is set to true
+  - name: resourceGroupName
+    value: "test-rg"
+  - name: subscriptionID
+    value: "value of Azure subscription ID"
+  - name: partitionCount
+    value: "1"
+  - name: messageRetentionInDays
+    value: "3"
+  # Checkpoint store attributes
+  - name: storageAccountName
+    value: "myeventhubstorage"
+  - name: storageAccountKey
+    value: "112233445566778899"
+  - name: storageContainerName
+    value: "myeventhubstoragecontainer"
+  # Alternative to passing storageAccountKey
+  - name: storageConnectionString
+    value: "DefaultEndpointsProtocol=https;AccountName=<account>;AccountKey=<account-key>"
