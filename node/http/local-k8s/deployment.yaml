@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deployment
+  labels:
+    app: node-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-deployment
+  template:
+    metadata:
+      labels:
+        app: node-deployment
+    spec:
+      containers:
+      - name: node
+        image: dapr-pub-sub-examples-node-http:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
