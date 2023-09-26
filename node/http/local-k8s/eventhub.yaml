@@ -7,27 +7,26 @@ spec:
   version: v1
   metadata:
   - name: connectionString
-    value: "[YOUR-CONNECTION-STRING]"
+    value: "[CONN_STR]"
   - name: eventHubNamespace
-    value: "[YOUR-EVENTHUB-NAMESPACE]"
+    value: "some-eventhub"
   - name: enableEntityManagement
     value: "false"
   # The following four properties are needed only if enableEntityManagement is set to true
   - name: resourceGroupName
-    value: "test-rg"
+    value: "some-rg"
   - name: subscriptionID
-    value: "value of Azure subscription ID"
+    value: "[SUB_ID]"
   - name: partitionCount
     value: "1"
   - name: messageRetentionInDays
     value: "3"
   # Checkpoint store attributes
   - name: storageAccountName
-    value: "myeventhubstorage"
+    value: "somestorageaccount"
   - name: storageAccountKey
-    value: "112233445566778899"
+    value: "[STORAGE_KEY]"
   - name: storageContainerName
-    value: "myeventhubstoragecontainer"
-  # Alternative to passing storageAccountKey
-  - name: storageConnectionString
-    value: "DefaultEndpointsProtocol=https;AccountName=<account>;AccountKey=<account-key>"
+    value: "eventhub-checkpoint"
+scopes:
+  - node
