@@ -7,16 +7,14 @@ spec:
   version: v1
   metadata:
   - name: connectionString
-    value: "[CONN_STR]"
-  - name: eventHubNamespace
-    value: "some-eventhub"
+    value: "Endpoint=sb://some-eventhub.servicebus.windows.net/;SharedAccessKeyName=root;SharedAccessKey=[access_key];EntityPath=some-eventhub-topic"
   - name: enableEntityManagement
-    value: "false"
+    value: "true"
   # The following four properties are needed only if enableEntityManagement is set to true
   - name: resourceGroupName
     value: "some-rg"
   - name: subscriptionID
-    value: "[SUB_ID]"
+    value: "00000000-0000-0000-0000-0000000000000"
   - name: partitionCount
     value: "1"
   - name: messageRetentionInDays
@@ -25,8 +23,8 @@ spec:
   - name: storageAccountName
     value: "somestorageaccount"
   - name: storageAccountKey
-    value: "[STORAGE_KEY]"
+    value: "[storage_account_key]"
   - name: storageContainerName
     value: "eventhub-checkpoint"
 scopes:
-  - node
+  - node-app

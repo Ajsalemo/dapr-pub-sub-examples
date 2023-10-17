@@ -8,8 +8,8 @@ export const publishController = router.get("/", async (_req, res) => {
         const data = [
             { "orderId": "100" }
         ]
-        const response = await axiosInstance.post("/orders", data)
-        console.log(response)
+        const response = await axiosInstance.post("/ansalemo-eventhub-topic", data)
+        console.log(response.status ?? "no status code returned")
         res.json({ "msg": "publish-controller" })
     } catch (error) {
         console.error(error)
