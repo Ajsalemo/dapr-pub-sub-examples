@@ -4,9 +4,10 @@ metadata:
   name: node-service
 spec:
   selector:
-    app: node-deployment
+    app: node-app
   ports:
     - protocol: TCP
-      port: 3000
-      nodePort: 31322
+      port: 8080
+      targetPort: 8080
+      nodePort: 31111
   type: NodePort

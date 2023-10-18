@@ -6,9 +6,9 @@ export const subscribeController = router.get("/", (_req, res) => {
     try {
         res.json([
             {
-                pubsubname: "eventhubs-pubsub",
-                topic: "ansalemo-eventhub-topic",
-                route: "messages"
+                pubsubname: "pubsub",
+                topic: "orders",
+                route: "orders"
             }
         ]);
     } catch (error) {

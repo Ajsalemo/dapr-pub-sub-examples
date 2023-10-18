@@ -2,9 +2,9 @@ import express from "express";
 
 const router = express.Router();
 
-export const getMessages = router.post("/", (req, res) => {
+export const getOrdersController = router.post("/", (req, res) => {
     try {
-        console.log(req.body)
+        console.log("Order recieved with information: " + req.body.data[0].orderId)
         res.sendStatus(200);
     } catch (error) {
         console.error(error)

@@ -11,6 +11,6 @@ const keepAliveAgent = new Agent({
 export const axiosInstance = axios.create({ 
     // The URL Dapr expects is constructed as follows:
     // http://localhost:3500/v1.0/publish/[pubsub_component_metadata.name]/[eventhub_topic_name]
-    baseURL: "http://localhost:3500/v1.0/publish/eventhubs-pubsub",
+    baseURL: "http://localhost:3500/v1.0/publish/pubsub",
     httpAgent: keepAliveAgent
 })
