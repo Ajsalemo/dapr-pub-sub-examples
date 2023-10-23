@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+  labels:
+    app: python-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "python-app"
+        dapr.io/app-port: "8000"
+        dapr.io/log-level: "debug"
+    spec:
+      containers:
+      - name: python
+        image: dapr-pub-sub-examples-python-http:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "1.0"
