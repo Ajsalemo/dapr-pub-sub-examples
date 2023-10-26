@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
 from uuid import uuid4
-import requests, json
+from dapr.clients import DaprClient
+import json
 
 app = Flask(__name__)
+d = DaprClient()
 
 @app.route("/")
 def index():
@@ -16,7 +18,7 @@ def publishController():
         "orderId": id,
     }]
 
-    requests.post("http://localhost:3500/v1.0/publish/pubsub/orders", json=data)
+    d.publish_event(pubsub_name="pubsub", topic_name="orders", data=f"{data}")
 
     return jsonify({"msg": f"Order published with order id: {id}"})
 

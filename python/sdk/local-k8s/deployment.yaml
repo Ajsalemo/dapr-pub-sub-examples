@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: python
-        image: dapr-pub-sub-examples-python-http:latest
+        image: dapr-pub-sub-examples-python-sdk:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
