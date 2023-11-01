@@ -11,6 +11,7 @@ func main() {
     app := fiber.New()
 
     app.Get("/", controllers.IndexController)
+    app.Post("/orders", controllers.GetOrdersController)
 	app.Get("/api/pub", controllers.PublishController)
 	app.Get("/dapr/subscribe", controllers.SubscribeController)
 

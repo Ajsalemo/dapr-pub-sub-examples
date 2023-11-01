@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+spec:
+  type: pubsub.azure.eventhubs
+  version: v1
+  metadata:
+  - name: connectionString
+    value: "Endpoint=sb://some-eh.servicebus.windows.net/;SharedAccessKeyName=root;SharedAccessKey=00000000000000000000000000000000;EntityPath=orders"
+  - name: storageAccountName
+    value: "somestorageaccount"
+  - name: storageAccountKey
+    value: "[AZURE_STORAGE_ACCOUNT_KEY]"
+  - name: storageContainerName
+    value: "orders"
+  - name: consumerID
+    value: "checkpoint"
+scopes:
+  - go-app
