@@ -29,11 +29,11 @@ public class PublishController {
         data.add(orders);
 
         WebClient client = WebClient.builder()
-                .baseUrl("http://localhost:3501")
+                .baseUrl("http://localhost:3500")
                 .build();
 
         UriSpec<RequestBodySpec> uriSpec = client.post();
-        RequestBodySpec bodySpec = uriSpec.uri("/v1.0/publish/pubsub");
+        RequestBodySpec bodySpec = uriSpec.uri("/v1.0/publish/pubsub/orders");
         RequestHeadersSpec<?> headersSpec = bodySpec.bodyValue(data);
 
         Mono<String> response = headersSpec.retrieve()
