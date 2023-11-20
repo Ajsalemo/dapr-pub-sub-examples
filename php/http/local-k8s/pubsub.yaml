@@ -1,0 +1,20 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: pubsub
+spec:
+  type: pubsub.azure.eventhubs
+  version: v1
+  metadata:
+  - name: connectionString
+    value: "[eh_conn_str]"
+  - name: storageAccountName
+    value: "somestorageaccount"
+  - name: storageAccountKey
+    value: "[storage_account_key]"
+  - name: storageContainerName
+    value: "orders"
+  - name: consumerID
+    value: "checkpoint"
+scopes:
+  - php-app
