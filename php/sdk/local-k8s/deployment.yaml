@@ -31,4 +31,4 @@ spec:
             cpu: "1.0"
         env:
         - name: APP_KEY
-          value: "base64:d6KIQuhFaeLlLeBtuiC9Q8Z9HvO2w4QmLI2Gp3KbHkM="
+          value: "[app_key]"
