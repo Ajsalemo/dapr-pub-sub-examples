@@ -1,3 +1,5 @@
+using System.Text;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 
@@ -7,8 +9,13 @@ namespace http.Controllers;
 [Route("/api/pub")]
 public class PublishController : ControllerBase
 {
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public PublishController(IHttpClientFactory httpClientFactory) =>
+        _httpClientFactory = httpClientFactory;
+
     [HttpGet]
-    public string Publish()
+    public async Task<string> Publish()
     {
         string guid = Guid.NewGuid().ToString();
 
@@ -21,6 +28,12 @@ public class PublishController : ControllerBase
         {
             publishObj
         };
+
+        var json = JsonSerializer.Serialize(publishArray);
+        var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var httpClient = _httpClientFactory.CreateClient("daprClient");
+        using var httpPostMessage = await httpClient.PostAsync("", data);
 
         string msg = "Order published with order id: " + guid;
 
