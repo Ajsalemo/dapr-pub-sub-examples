@@ -1,7 +1,6 @@
 using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
 
 namespace http.Controllers;
 
@@ -19,17 +18,12 @@ public class PublishController : ControllerBase
     {
         string guid = Guid.NewGuid().ToString();
 
-        JObject publishObj = new()
+        var order = new Order
         {
-            ["orderId"] = "pubsub",
+            OrderId = guid
         };
 
-        JArray publishArray = new()
-        {
-            publishObj
-        };
-
-        var json = JsonSerializer.Serialize(publishArray);
+        var json = JsonSerializer.Serialize(order);
         var data = new StringContent(json, Encoding.UTF8, "application/json");
 
         var httpClient = _httpClientFactory.CreateClient("daprClient");
@@ -39,4 +33,9 @@ public class PublishController : ControllerBase
 
         return msg;
     }
+}
+
+public class Order
+{
+    public string? OrderId { get; set; }
 }
