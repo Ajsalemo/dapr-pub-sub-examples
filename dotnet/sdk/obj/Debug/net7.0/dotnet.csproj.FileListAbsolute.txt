@@ -1,0 +1,7 @@
+C:\Users\ansalemo\OneDrive - Microsoft\Documents\Code\Github\dapr-pub-sub-examples\dotnet\sdk\obj\Debug\net7.0\dotnet.csproj.AssemblyReference.cache
+C:\Users\ansalemo\OneDrive - Microsoft\Documents\Code\Github\dapr-pub-sub-examples\dotnet\sdk\obj\Debug\net7.0\dotnet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ansalemo\OneDrive - Microsoft\Documents\Code\Github\dapr-pub-sub-examples\dotnet\sdk\obj\Debug\net7.0\dotnet.AssemblyInfoInputs.cache
+C:\Users\ansalemo\OneDrive - Microsoft\Documents\Code\Github\dapr-pub-sub-examples\dotnet\sdk\obj\Debug\net7.0\dotnet.AssemblyInfo.cs
+C:\Users\ansalemo\OneDrive - Microsoft\Documents\Code\Github\dapr-pub-sub-examples\dotnet\sdk\obj\Debug\net7.0\dotnet.csproj.CoreCompileInputs.cache
+C:\Users\ansalemo\OneDrive - Microsoft\Documents\Code\Github\dapr-pub-sub-examples\dotnet\sdk\obj\Debug\net7.0\dotnet.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ansalemo\OneDrive - Microsoft\Documents\Code\Github\dapr-pub-sub-examples\dotnet\sdk\obj\Debug\net7.0\dotnet.MvcApplicationPartsAssemblyInfo.cache
