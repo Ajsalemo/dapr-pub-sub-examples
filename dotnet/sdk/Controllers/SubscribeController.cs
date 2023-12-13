@@ -4,11 +4,10 @@ using Dapr;
 namespace http.Controllers;
 
 [ApiController]
-[Route("/dapr/subscribe")]
 public class SubscribeController : ControllerBase
 {
     [Topic("pubsub", "orders")]
-    [HttpPost()]
+    [HttpPost("/orders")]
     public string Subscribe([FromBody] dynamic content)
     {
         string order = "Order recieved with information: " + content.ToString();

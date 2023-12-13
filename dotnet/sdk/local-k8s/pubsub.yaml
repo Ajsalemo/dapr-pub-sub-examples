@@ -7,11 +7,11 @@ spec:
   version: v1
   metadata:
   - name: connectionString
-    value: "Endpoint=sb://some-eh.servicebus.windows.net/;SharedAccessKeyName=root;SharedAccessKey=[key];EntityPath=orders"
+    value: "[connectionString]"
   - name: storageAccountName
     value: "somestorageaccount"
   - name: storageAccountKey
-    value: "[storage_account_key]"
+    value: "[storageAccountKey]"
   - name: storageContainerName
     value: "orders"
   - name: consumerID

@@ -9,11 +9,6 @@ namespace sdk.Controllers;
 [Route("/api/pub")]
 public class PublishController : ControllerBase
 {
-    private readonly IHttpClientFactory _httpClientFactory;
-
-    public PublishController(IHttpClientFactory httpClientFactory) =>
-        _httpClientFactory = httpClientFactory;
-
     [HttpGet]
     public async Task<string> Publish()
     {
@@ -25,10 +20,9 @@ public class PublishController : ControllerBase
         };
 
         var json = JsonSerializer.Serialize(order);
-        var data = new StringContent(json, Encoding.UTF8, "application/json");
 
         var client = new DaprClientBuilder().Build();
-        await client.PublishEventAsync("pubsub", "orders", data);
+        await client.PublishEventAsync("pubsub", "orders", json);
         string msg = "Order published with order id: " + guid;
 
         return msg;
