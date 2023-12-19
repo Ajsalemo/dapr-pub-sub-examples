@@ -12,6 +12,13 @@ Various examples of using Dapr with the pubsub building block across runtimes.
 1. Create a Container App and Container App environment
 2. Push the image built from the language `Dockerfile` to an Azure Container Registry
 3. Create a `pubsub` dapr component, with the following:
-  - [TBD]
+  - ![image](https://github.com/Ajsalemo/dapr-pub-sub-examples/assets/31021304/32d2f13d-f62e-42d6-ba1c-ae5e724335de)
+  - Add in the same `metaData` thats in the `local-k8s` folders in the examples
+  - `connectionString`: EventHub connection string
+  - `storageAccountName`: Storage account name
+  - `storageAccountKey`: Storage account key
+  - `storageContainerName`: Storage ontainer name
+  - `consumerID`: Name of the consumer ID, if not defined, it uses the `appId`
+  - Add the component to the application by specifying it in `scopes`
 4. Enable dapr on the Container App
 5. Ensure ingress is set to the appropriate port for the language example being used
