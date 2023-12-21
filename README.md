@@ -1,6 +1,8 @@
 # dapr-pub-sub-examples
 Various examples of using Dapr with the pubsub building block across runtimes.
 
+**NOTE**: These example(s) and the below instructions use Event Hub - however, other pubsub providers can be input as desired.
+
 ## Running locally
 1. Install some type of Kubernetes cluster. An easy method is to just enable [Kubernetes in Docker Desktop](https://docs.docker.com/desktop/kubernetes/#:~:text=To%20turn%20on%20Kubernetes%20in%20Docker%20Desktop%3A%201,and%20installs%20the%20%2Fusr%2Flocal%2Fbin%2Fkubectl%20command%20on%20your%20machine.)
 2. Each language folder has a `local-k8s` sub folder. This contains a `pubsub.yaml`, `deployment.yaml` and `service.yaml` file.
