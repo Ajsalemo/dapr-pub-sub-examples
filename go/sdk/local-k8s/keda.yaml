@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: keda-eventhub-auth
+data:
+  connection: "base64encodedstring"
+  storageConnection: "base64encodedstring"
+---
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: azure-eventhub-auth-trigger
+spec:
+  secretTargetRef:
+  - parameter: connection
+    name: keda-eventhub-auth
+    key: connection
+  - parameter: storageConnection 
+    name: keda-eventhub-auth
+    key: storageConnection 
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: go-app-keda
+spec:
+  scaleTargetRef:
+    name: go-app
+  triggers:
+    - type: azure-eventhub
+      metadata:
+        blobContainer: "orders"
+        unprocessedEventThreshold: "1"
+        # This is important
+        checkpointStrategy: "blobMetadata"
+      authenticationRef:
+        name: azure-eventhub-auth-trigger
+

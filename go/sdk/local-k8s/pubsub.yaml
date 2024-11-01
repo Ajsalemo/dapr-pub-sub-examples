@@ -7,14 +7,14 @@ spec:
   version: v1
   metadata:
   - name: connectionString
-    value: "Endpoint=sb://some-eh.servicebus.windows.net/;SharedAccessKeyName=root;SharedAccessKey=00000000000000000000000000000000;EntityPath=orders"
+    value: "Endpoint=sb://someeh.servicebus.windows.net/;SharedAccessKeyName=root;SharedAccessKey=xxxxxxxx;EntityPath=orders"
   - name: storageAccountName
-    value: "somestorageaccount"
+    value: "somestorage"
   - name: storageAccountKey
-    value: "[AZURE_STORAGE_ACCOUNT_KEY]"
+    value: "xxxxxxxxxx"
   - name: storageContainerName
     value: "orders"
   - name: consumerID
-    value: "checkpoint"
+    value: "$default"
 scopes:
   - go-app
