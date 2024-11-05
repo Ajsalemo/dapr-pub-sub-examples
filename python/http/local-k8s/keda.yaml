@@ -23,10 +23,10 @@ spec:
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
-  name: go-app-keda
+  name: python-app-keda
 spec:
   scaleTargetRef:
-    name: go-app
+    name: python-app
   triggers:
     - type: azure-eventhub
       metadata:
@@ -36,3 +36,4 @@ spec:
         checkpointStrategy: "blobMetadata"
       authenticationRef:
         name: azure-eventhub-auth-trigger
+
