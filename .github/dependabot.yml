@@ -101,6 +101,26 @@ updates:
       interval: "weekly"
 
   - package-ecosystem: "dotnet-sdk" 
-    directory: "/dotnet/http" 
+    directory: "/httpk" 
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "docker"
+    directory: "/php/http"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "docker"
+    directory: "/sdkp"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "composer" 
+    directory: "/php/http" 
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "composer" 
+    directory: "/php/sdk" 
     schedule:
       interval: "weekly"
