@@ -111,7 +111,7 @@ updates:
       interval: "weekly"
 
   - package-ecosystem: "docker"
-    directory: "/sdkp"
+    directory: "/php/sdk"
     schedule:
       interval: "weekly"
 
