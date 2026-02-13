@@ -1,4 +1,4 @@
-FROM php:8.1-apache-bullseye as build
+FROM php:8.4-apache-bullseye as build
 WORKDIR /app/
 COPY . .
 # We need to manually download composer since the composer image itself references the latest PHP version (8.2.12 at the time of writing this)
@@ -11,7 +11,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     apt-get install -yy git && \
     php composer.phar install --prefer-dist --no-dev --optimize-autoloader --no-interaction
 
-FROM php:8.1-apache-bullseye as production
+FROM php:8.4-apache-bullseye as production
 WORKDIR /var/www/html
 COPY --from=build /app/ ./
 COPY --from=build /app/apache/000-default.conf /etc/apache2/sites-available/
