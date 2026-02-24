@@ -4,7 +4,7 @@ go 1.24.6
 
 require (
 	github.com/dapr/go-sdk v1.13.0
-	github.com/gofiber/fiber/v2 v2.52.11
+	github.com/gofiber/fiber/v2 v2.52.12
 	github.com/google/uuid v1.6.0
 )
 
