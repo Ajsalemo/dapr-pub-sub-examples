@@ -12,7 +12,7 @@ frozenlist==1.8.0
 grpcio==1.83.0
 gunicorn==26.2.0
 idna==3.19
-importlib-metadata==9.0.0
+importlib-metadata==9.0.1
 itsdangerous==2.2.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
